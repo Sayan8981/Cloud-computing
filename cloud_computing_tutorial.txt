@@ -1,0 +1,45 @@
+* Discuss 
+
+- Concepts
+- Techniques
+- Industry systems, including open source(from the inside)
+
+* The course is mix of 
+
+- Distributed System
+- Distributed Algorithms
+- As applied to cloud computing
+
+* Part 1
+
+
+* Cloud Providers 
+
+- AWS
+  1. EC2 - Elastic compute cloud 
+  2. S3 -  Simple Storage service
+  3. EBS - Elastic Block storage
+
+- Microsoft Azure
+- Google compute engine
+- Rightscale, salesforce, EMC, Gigaspaces, 10gen ,datastax, Oracle , cloudera etc. 
+
+* categories of cloud :
+
+- Private cloud (can access only companies employee)
+- Public cloud  
+
+* Cloud 
+
+- Lots of storage + compute cycles nearby
+
+* A single-sited cloud (datacenter) consists of 
+ - Compute nodes (grouped into racks)
+ - Switches, connecting the racks
+ - A network topology e.g: Hierarchical
+ - Storage nodes connected to the network
+ - Frontend for submitting jobs and receiving client request
+ - software Services
+* A geographically distributed cloud consists of 
+  -multiple such sites 
+  - each sites with different structure and services
