@@ -43,3 +43,67 @@
 * A geographically distributed cloud consists of 
   -multiple such sites 
   - each sites with different structure and services
+
+
+* Aspects of clouds
+
+on demand : renting a cab vs renting a car or buying one E.g.:
+  - AWS EC2: a few cent to few $ per CPU hour
+  - AWS S3 : a few cent to few $ per GB-month
+
+HaaS: hardware as a service
+   - you get access to barebones hardware machines, do whatever you want with them .Ex- your own cluster
+   - not always good idea beacause of security risk
+
+IaaS : Infrastructure as a Service
+   - You get access a flexible computing and storage infrastructure.Virtualization is one way of achieving this (what's another way  e.g. using Linux ) Often said to subsume HaaS.
+   - Ex: AWS (EC2 and S3), Eucalyptus, Rightscale, Microsoft Azure.    
+
+PaaS : Platform as a Service
+   - You get access to flexible computing and storage infrastructure,coupled with a software platform (often tightly)
+   - Ex: Google's AppEngine(python , Java,Go)
+
+SaaS: Software as a Service
+   - You get access to software service,when you need them. Often said to subsume SOA(service oriented archietechtures.)
+   - Ex- Google Docs ,MS office on demand.   
+
+
+* Data - intensive computing :
+
+   - Computation - intensive computing 
+       a. Example areas : MPI based , High performance computing, Grids
+       b. Typically run on supercomputers	(NCSA blue waters)
+
+   - Data -intensive:
+       a. Typically store the data at datacenters.
+       b. Use computes nodes nearby
+       c. Compute nodes runn computation services.
+
+  In data intensive computing , the focus shifts from computation to data :
+  CPU utilization no longer the most important resource metric , instead I/O is (disk and/or network)  
+
+
+* New cloud programming paradigms
+
+  - Easy to write and run highly parallel programs in new cloud programming paradigms:
+     a. Google: MapReduce and Sazwall 
+     b. Amazon: Elastic Mapreduce service 
+     c. Yahoo !(Hadoop+pig)
+     d. NoSQL : Mysql is an industry standard 
+
+
+* Single Site Cloud: TO outsource or Own?
+
+Example:
+Medium-sized oraganization: wishes to run a service for M months 
+    - Service requires 128 servers (1024 cores) and 524 TB 
+    - Same as UIUC CCT cloud site 
+
+-- Outsource (via AWS): monthly cost 
+    * S3 cost : $0.12 per GB month. EC2 cost : $0.10 per CPU hour (from 2009)
+    * storage = $0.12* 524 *1000 ~62K
+    * Total =Stotrage + CPUs= 62K +$0.10 * 1024*24 *30 ~$136K
+
+-- Own : Monthly cost 
+    * Storage ~ $349 K/M
+    * total ~ $1555K/M + 7.5K (includes 1 sysadmin/ 100 nodes)                 	       
