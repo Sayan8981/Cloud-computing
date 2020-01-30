@@ -106,4 +106,46 @@ Medium-sized oraganization: wishes to run a service for M months
 
 -- Own : Monthly cost 
     * Storage ~ $349 K/M
-    * total ~ $1555K/M + 7.5K (includes 1 sysadmin/ 100 nodes)                 	       
+    * total ~ $1555K/M + 7.5K (includes 1 sysadmin/ 100 nodes)
+
+
+* Breakeven analysys: More preferable to own if:
+    - $349K/M  < 62K (storage)
+    - $1555K/M +7.5K < $136K (overall)
+
+    breakeven points:
+    - M > 5.55 Months(storage)
+    - M > 12 months (overall)
+
+   As a result:
+   - startup use cloud a lot 
+   - cloud providers benefits monetarily most from storage 
+
+
+* Cloud
+	
+	- A cloud consists of 
+	a. hundred to thousands of machines in a data center (server side)
+	b. thousand to millions of 	machine accessing these services(client side)
+
+	- Servers communicate amongst one another 
+	- clients communicate with servers 
+	- clients also communicate with servers 
+
+
+* cloud is distributed system
+    - Servers communicate amongst one another -> Distributed system
+         - Essentialy a Cluster
+    - Clients communicate with servers
+         - also a distributed system 
+    - Clients may also communicate with each other
+       - In peer to peer sysytem link BitTorrent           
+       - also a distributed system 
+
+
+* feature of cloud :
+
+  - Massive scale : Many server 
+  - On-demand nature: access multiple servers anywhere
+  - Data-intensive nature: lots of data=> need a cluster (multiple machine) to store 
+  - New cloud programming paradigm: Hadoop/Mapreduce, NoSQL all need cluster       
