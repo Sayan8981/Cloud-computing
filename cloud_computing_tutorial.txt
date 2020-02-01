@@ -168,3 +168,26 @@ Process individual records sequentially, independently and parallelly.
 Reduce:
 
 Reduce processes and merges all intermidiate values associated per key.
+
+* Example of MapReduce
+
+   Distributed grep
+
+   Input : large set of files
+   output : lines that match pattern
+
+   - Map: Emits the line if it is matches the supplied pattern
+   - Reduce: Copies the intermidiate data to output
+
+
+* MapReduce scheduling:
+
+   Externally: for User
+    1. Write map program(short), write reduce program (short)
+    2. submit the job , wait for the result
+    3. need to know nothing about parallel/distributed programming
+  Intenally : For the paradigm and sheduler
+    1. Parallelize Map
+    2. Transfer data from Map to reduce
+    3. Parallelize Reduce
+    4. implement storege for map input , map output , Reduce input and Reduce output   
