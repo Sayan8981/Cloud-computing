@@ -1,10 +1,10 @@
-* Discuss 
+* Discuss
 
 - Concepts
 - Techniques
 - Industry systems, including open source(from the inside)
 
-* The course is mix of 
+* The course is mix of
 
 - Distributed System
 - Distributed Algorithms
@@ -13,35 +13,35 @@
 * Part 1
 
 
-* Cloud Providers 
+* Cloud Providers
 
 - AWS
-  1. EC2 - Elastic compute cloud 
+  1. EC2 - Elastic compute cloud
   2. S3 -  Simple Storage service
   3. EBS - Elastic Block storage
 
 - Microsoft Azure
 - Google compute engine
-- Rightscale, salesforce, EMC, Gigaspaces, 10gen ,datastax, Oracle , cloudera etc. 
+- Rightscale, salesforce, EMC, Gigaspaces, 10gen ,datastax, Oracle , cloudera etc.
 
 * categories of cloud :
 
 - Private cloud (can access only companies employee)
-- Public cloud  
+- Public cloud
 
-* Cloud 
+* Cloud
 
 - Lots of storage + compute cycles nearby
 
-* A single-sited cloud (datacenter) consists of 
+* A single-sited cloud (datacenter) consists of
  - Compute nodes (grouped into racks)
  - Switches, connecting the racks
  - A network topology e.g: Hierarchical
  - Storage nodes connected to the network
  - Frontend for submitting jobs and receiving client request
  - software Services
-* A geographically distributed cloud consists of 
-  -multiple such sites 
+* A geographically distributed cloud consists of
+  -multiple such sites
   - each sites with different structure and services
 
 
@@ -57,7 +57,7 @@ HaaS: hardware as a service
 
 IaaS : Infrastructure as a Service
    - You get access a flexible computing and storage infrastructure.Virtualization is one way of achieving this (what's another way  e.g. using Linux ) Often said to subsume HaaS.
-   - Ex: AWS (EC2 and S3), Eucalyptus, Rightscale, Microsoft Azure.    
+   - Ex: AWS (EC2 and S3), Eucalyptus, Rightscale, Microsoft Azure.
 
 PaaS : Platform as a Service
    - You get access to flexible computing and storage infrastructure,coupled with a software platform (often tightly)
@@ -65,12 +65,12 @@ PaaS : Platform as a Service
 
 SaaS: Software as a Service
    - You get access to software service,when you need them. Often said to subsume SOA(service oriented archietechtures.)
-   - Ex- Google Docs ,MS office on demand.   
+   - Ex- Google Docs ,MS office on demand.
 
 
 * Data - intensive computing :
 
-   - Computation - intensive computing 
+   - Computation - intensive computing
        a. Example areas : MPI based , High performance computing, Grids
        b. Typically run on supercomputers	(NCSA blue waters)
 
@@ -80,31 +80,31 @@ SaaS: Software as a Service
        c. Compute nodes runn computation services.
 
   In data intensive computing , the focus shifts from computation to data :
-  CPU utilization no longer the most important resource metric , instead I/O is (disk and/or network)  
+  CPU utilization no longer the most important resource metric , instead I/O is (disk and/or network)
 
 
 * New cloud programming paradigms
 
   - Easy to write and run highly parallel programs in new cloud programming paradigms:
-     a. Google: MapReduce and Sazwall 
-     b. Amazon: Elastic Mapreduce service 
+     a. Google: MapReduce and Sazwall
+     b. Amazon: Elastic Mapreduce service
      c. Yahoo !(Hadoop+pig)
-     d. NoSQL : Mysql is an industry standard 
+     d. NoSQL : Mysql is an industry standard
 
 
 * Single Site Cloud: TO outsource or Own?
 
 Example:
-Medium-sized oraganization: wishes to run a service for M months 
-    - Service requires 128 servers (1024 cores) and 524 TB 
-    - Same as UIUC CCT cloud site 
+Medium-sized oraganization: wishes to run a service for M months
+    - Service requires 128 servers (1024 cores) and 524 TB
+    - Same as UIUC CCT cloud site
 
--- Outsource (via AWS): monthly cost 
+-- Outsource (via AWS): monthly cost
     * S3 cost : $0.12 per GB month. EC2 cost : $0.10 per CPU hour (from 2009)
     * storage = $0.12* 524 *1000 ~62K
     * Total =Stotrage + CPUs= 62K +$0.10 * 1024*24 *30 ~$136K
 
--- Own : Monthly cost 
+-- Own : Monthly cost
     * Storage ~ $349 K/M
     * total ~ $1555K/M + 7.5K (includes 1 sysadmin/ 100 nodes)
 
@@ -118,34 +118,53 @@ Medium-sized oraganization: wishes to run a service for M months
     - M > 12 months (overall)
 
    As a result:
-   - startup use cloud a lot 
-   - cloud providers benefits monetarily most from storage 
+   - startup use cloud a lot
+   - cloud providers benefits monetarily most from storage
 
 
 * Cloud
-	
-	- A cloud consists of 
+
+	- A cloud consists of
 	a. hundred to thousands of machines in a data center (server side)
 	b. thousand to millions of 	machine accessing these services(client side)
 
-	- Servers communicate amongst one another 
-	- clients communicate with servers 
-	- clients also communicate with servers 
+	- Servers communicate amongst one another
+	- clients communicate with servers
+	- clients also communicate with servers
 
 
 * cloud is distributed system
     - Servers communicate amongst one another -> Distributed system
          - Essentialy a Cluster
     - Clients communicate with servers
-         - also a distributed system 
+         - also a distributed system
     - Clients may also communicate with each other
-       - In peer to peer sysytem link BitTorrent           
-       - also a distributed system 
+       - In peer to peer sysytem link BitTorrent
+       - also a distributed system
 
 
 * feature of cloud :
 
-  - Massive scale : Many server 
+  - Massive scale : Many server
   - On-demand nature: access multiple servers anywhere
-  - Data-intensive nature: lots of data=> need a cluster (multiple machine) to store 
-  - New cloud programming paradigm: Hadoop/Mapreduce, NoSQL all need cluster       
+  - Data-intensive nature: lots of data=> need a cluster (multiple machine) to store
+  - New cloud programming paradigm: Hadoop/Mapreduce, NoSQL all need cluster
+
+* The following are not distributed systems
+  - Humans interacting with each other
+  - A standalone machine not connected to the network and with only one process running on it
+
+* A distributed system is a collection of entities(Processes), each of which is autonomous(standalone),programmable,
+  asynchronous(each entity/process will run its own clockwise means not synchronize) and failure prone,
+  and which communicate through unreliable communication medium.
+
+
+* Mapreduce paradigm:
+
+Map :
+
+Process individual records sequentially, independently and parallelly.
+
+Reduce:
+
+Reduce processes and merges all intermidiate values associated per key.
