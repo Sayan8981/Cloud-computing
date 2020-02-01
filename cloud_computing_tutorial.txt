@@ -190,4 +190,22 @@ Reduce processes and merges all intermidiate values associated per key.
     1. Parallelize Map
     2. Transfer data from Map to reduce
     3. Parallelize Reduce
-    4. implement storege for map input , map output , Reduce input and Reduce output   
+    4. implement storege for map input , map output , Reduce input and Reduce output
+
+* inside Mapreduce:
+
+   - For the cloud
+   1. Parallelize map :easy! each map task is independent each other.
+       All map output records with same key assigned to same reduce
+   2. Transfer data from Map to Reduce:
+      -All map output recoeds with same key assigned to same reduce task.
+      - use partitioning function e.g. hash(key)%number of reducers
+   3. Parallelize reduce : each reduce task is independent each another
+   4. implement storage for map input, map output,reduce input and reduce output.
+      - Map input : from distributed file system
+      - Map output : to local disk(at map nodes) : uses local file systems
+      - Reduce input : from remote disk ; uses local file system
+      - Reduce output : to distributed file system
+
+      Local file system : Linux FS etc.
+      distributed file system: GFS(google file system), HDFS (Hadoop distributed file system)            
